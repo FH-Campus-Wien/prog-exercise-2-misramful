@@ -165,10 +165,29 @@ if(countOfMarks==2){
     }
 
 
-    //todo Task 6; power ist hochzeile
+    //todo Task 6; power ist hochzeile // T. Besprechung
     public void happyNumbers() {
 
+        Scanner scan = new Scanner(System.in);
+        int number = 0;
+        int sum = 0;
         System.out.print("n: ");
+        number = scan.nextInt();
+
+        while(number != 1 && number != 4) {
+            while (number != 0) {
+                sum += Math.pow(number % 10, 2);
+                number /= 10;
+            }
+            number = sum;
+            sum = 0;
+        }
+        if(number ==1) {
+            System.out.println("Happy number!");
+        } else {
+            System.out.println("Sad number!");
+        }
+        /*System.out.print("n: ");
 
         Scanner scan = new Scanner(System.in);
         int number = scan.nextInt();
@@ -193,7 +212,7 @@ if(countOfMarks==2){
             }
         }
 
-        /*
+        /* bis hier
         // unhappy zahlen: lange if Bedingung mit oder
         System.out.print("n: ");
         int number = scan.nextInt();

@@ -1,6 +1,6 @@
 package at.ac.fhcampuswien;
 
-import java.sql.SQLOutput;
+//import java.sql.SQLOutput;
 import java.util.Scanner;
 //import java.util.ArrayList;
 //import com.sun.rowset.internal.Row;
@@ -83,7 +83,7 @@ public class App {
     //todo Task 4
 
     public void printRhombus(){
-        /*Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         System.out.print("h: ");
         int h = scan.nextInt();
@@ -117,54 +117,7 @@ public class App {
             System.out.println("Invalid number!");
         }
 
-/*
-haben ungerade zahl gegeben,
 
-//dann for schleife, fangen mit der nullten Zahl an, aufwärts zählen und dann rückwärts
-//Scanner scan...
-//Achtung obere und untere Hälfte
-
-
-sout ("h: ");
-int h = scannextInt();
-sout("c: ");
-char c= scan.next().charAT(0);
-
-if (h % 2 == 1){}
-
-for(int i=0; i <= h/2; i+) {     //   i ist row
-for(int i = 0; i<= h/2; i++) {
-    for (int j = i; j < h / 2; j++) {
-        //   hier werden quasi 4 Leerzeichen geprinted, weil h / 2
-        sout(" ")
-    }
-}
-    for (int k = 0 - i; k <= i; k++) {
-      //  Vorschleife kann weiterlaufen, k ist Verschiebung quasi
-        sout((char) (c - Math.abs(k)));
-      //  Math ist Methode abs erlaubt dass wir int lonf loat double casten
-    } if a< 0 - a else a;
-   // bim uneren zählt aufwärts
-    sout();
-  //  Tutorium
-
-
-    Scanner scan = new Scanner(System.in);
-    int number = scan.nextInt();
-
-    int h = scan.nextInt();
-    System.out.print("h: ");
-    char c = scan.next().charAt(0);
-    System.out.print("c: ");
-
-    if (h % 2 == 1) {
-        System.out.println("Invalid number!");
-        return;  //return Anfang????
-
-    }
-}
-
- */
 }
 
 

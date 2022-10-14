@@ -83,6 +83,40 @@ public class App {
     //todo Task 4
 
     public void printRhombus(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("h: ");
+        int h = scan.nextInt();
+        System.out.print("c: ");
+        char c = scan.next().charAt(0);
+
+        if (h % 2 == 1) {
+            //oberer Hälfte
+            for (int row = 0; row <= h / 2; row = row + 1) {
+                //Abstände
+                for (int spaces = row; spaces < h/ 2; spaces = spaces +1) {
+                    System.out.print(" ");
+                }
+                for (int difference = 0 - row; difference <= row; difference = difference +1 ) {
+                    System.out.print((char)(c - Math.abs(difference)));
+                }
+                System.out.println();
+            }
+            //untere Hälfte
+            for (int row = h / 2; row > 0; row = row - 1) {
+                for (int rowForSpaces = row; rowForSpaces <= h / 2; rowForSpaces = rowForSpaces + 1) {
+                    System.out.print(" ");
+                }
+                for (int difference = 0 - row + 1; difference < row; difference = difference + 1) {
+                    System.out.print((char) (c - Math.abs(difference)));
+                }
+                System.out.println();
+            }
+        }
+        else if (h % 2 == 0) {
+            System.out.println("Invalid number!");
+        }
+
 /*
 haben ungerade zahl gegeben,
 

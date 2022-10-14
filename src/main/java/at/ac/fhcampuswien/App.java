@@ -13,24 +13,24 @@ public class App {
 
         Scanner scan = new Scanner(System.in);
         int start = 1;
-        System.out.println("Number " + start + ": ");
+        System.out.print("Number " + start + ": ");
         float number = scan.nextFloat();
 
         if (number <= 0) {
             System.out.println("No number entered.");
-        }
+        } else {
 
-        float highestnumber = 0; //muss integer initialisieren, 0 weil geringste Zahl ohne minuszahl zu sein
-        while (number > 0) {          //while besser wenn unbekannt wie viele Zahlen
-            if (number > highestnumber) {
-                highestnumber = number;
+            float highestnumber = 0; //muss integer initialisieren, 0 weil geringste Zahl ohne minuszahl zu sein
+            while (number > 0) {          //while besser wenn unbekannt wie viele Zahlen
+                if (number > highestnumber) {
+                    highestnumber = number;
+                }
+                start++; //außerhalb der Klammer, damit es nicht im if drinnen ist
+                System.out.print("Number " + start + ": ");
+                number = scan.nextFloat();
             }
-            start++; //außerhalb der Klammer, damit es nicht im if drinnen ist
-            System.out.print("Number " + start + ": ");
-
-            number = scan.nextFloat();
+            System.out.println("The largest number is " + String.format("%.2f", highestnumber));
         }
-        System.out.println("The largest number is " + String.format("%.2f", highestnumber));
     }
         //Scanner scanner = new Scanner(System.in);
         //double number = scanner.nextDouble();
@@ -44,7 +44,7 @@ public class App {
         // Hilfe von zwei Schleifen auf der Konsole erzeugt. Die Eingabe von Zahlen kleiner
         //           gleich 0 ist nicht erlaubt und verursacht eine Fehlermeldung
    public void stairs() {
-       System.out.println("n: ");
+       System.out.print("n: ");
        Scanner scan = new Scanner(System.in);
        int number = scan.nextInt();
 
@@ -79,55 +79,68 @@ public class App {
         }
     }
 
-/*
+
     //todo Task 4
 
     public void printRhombus(){
+/*
 haben ungerade zahl gegeben,
-dann for schleife, fangen mit der nullten Zahl an, aufwärts zählen und dann rückwärts
-Tutorium
-Scanner scan...
-Achtung obere und untere Hälfte
+
+//dann for schleife, fangen mit der nullten Zahl an, aufwärts zählen und dann rückwärts
+//Tutorium
+//Scanner scan...
+//Achtung obere und untere Hälfte
+
+
 sout ("h: ");
 int h = scannextInt();
 sout("c: ");
-char c scan.next().charAT(0);
+char c= scan.next().charAT(0);
 
-if (h % 2 == 1{
+if (h % 2 == 1){}
 
-for(int i=0; i <= h/2; i+) {        i ist row
-for(int i = 0; i<= h/2; i++){
-   for(int j = i; j < h / 2; j++){    hier werden quasi 4 Leerzeichen geprinted, weil h/2
-    sout (" ")
+for(int i=0; i <= h/2; i+) {     //   i ist row
+for(int i = 0; i<= h/2; i++) {
+    for (int j = i; j < h / 2; j++) {
+        //   hier werden quasi 4 Leerzeichen geprinted, weil h / 2
+        sout(" ")
+    }
 }
-for (int k = 0 - i; k <= i; k++) {  Vorschleife kann weiterlaufen, k ist Verschiebung quasi
-sout((char) (c - Math.abs(k)));    Math ist Methode abs erlaubt dass wir int lonf loat double casten
-}                                   if a<0 -a else a;  bim uneren zählt aufwärts
-sout();
-Tutorium
+    for (int k = 0 - i; k <= i; k++) {
+      //  Vorschleife kann weiterlaufen, k ist Verschiebung quasi
+        sout((char) (c - Math.abs(k)));
+      //  Math ist Methode abs erlaubt dass wir int lonf loat double casten
+    } if a< 0 - a else a;
+   // bim uneren zählt aufwärts
+    sout();
+  //  Tutorium
 
-        Scanner scan = new Scanner(System.in);
-        int number = scan.nextInt();
 
-        int h = scan.nextInt();
-        System.out.print("h: ");
-        char c = scan.next().charAt(0);
-        System.out.print("c: ");
+    Scanner scan = new Scanner(System.in);
+    int number = scan.nextInt();
 
-        if (h %2 == 1) {
-            System.out.println("Invalid number!");
-            return;  //return Anfang????
+    int h = scan.nextInt();
+    System.out.print("h: ");
+    char c = scan.next().charAt(0);
+    System.out.print("c: ");
 
-        }
-
+    if (h % 2 == 1) {
+        System.out.println("Invalid number!");
+        return;  //return Anfang????
 
     }
-*/
+}
+
+ */
+}
+
+
     //todo Task 5
     public void marks(){
         Scanner scan = new Scanner(System.in);
         int countOfMarks = 1;
-        System.out.println("Mark " + countOfMarks + ": ");
+        System.out.print("Mark " + countOfMarks + ": ");
+        countOfMarks++;
         int number = scan.nextInt();
         int countOfFive = 0;
         int allMarks = 0;
@@ -137,8 +150,10 @@ Tutorium
 
             if (number < 0 || number > 5) {
                 System.out.println("Invalid mark!");
-                System.out.println("Mark " + ++countOfMarks + ": ");
+                countOfMarks--;
+                System.out.print("Mark " + countOfMarks + ": ");
                 number = scan.nextInt();
+                countOfMarks++;
             }
 
             if (number >= 1 && number <= 5) {
@@ -146,33 +161,40 @@ Tutorium
                     countOfFive++;
                 }
                 allMarks = allMarks + number;
-                System.out.println("Mark " + ++countOfMarks + ": ");
+                System.out.print("Mark " + countOfMarks + ": ");
+                countOfMarks++;
                 number = scan.nextInt();
             }
         }
 
         //System.out.println("countOfMarks: " + countOfMarks);
         //System.out.println("allMarks: " + allMarks);
-
-        averageOfMarks = (float) allMarks / (float) countOfMarks;
+if(countOfMarks==2){
+    averageOfMarks=0;
+}else{
+    averageOfMarks = (float) allMarks / (float)( countOfMarks-2);
+}
         System.out.println("Average: " + String.format("%.2f", averageOfMarks));
         System.out.println("Negative marks: " + countOfFive);
     }
 
-    /*
-    //todo Task 6; power ist hochzeile
-    public void happyNumbers(){
 
-        Scanner scan = new Scanner(System.in);
+    //todo Task 6; power ist hochzeile
+    public void happyNumbers() {
+
+   /*     Scanner scan = new Scanner(System.in);
         System.out.println("n: ");
 
         int number = scan.nextInt();
         int x = 0;
 
-        do { x = (number % 10 * number % 10); //z.B. (30/10 = 0) * (30 oder 0/10 =  ); 31/10 = 1
+      / do {
+            x = (number % 10 * number % 10); //z.B. (30/10 = 0) * (30 oder 0/10 =  ); 31/10 = 1
             number = number / 10;
+            while (number != 0);
         }
-        while number != 0;
+
+
 
         if x = 1 {
             System.out.println("Happy number!");
@@ -180,8 +202,10 @@ Tutorium
         else {
             System.out.println("Sad number!");
         }
+*/
     }
-    */
+
+
 
     public static void main(String[] args){
         App exercise2 = new App();
@@ -189,21 +213,20 @@ Tutorium
         System.out.println("Task 1: Largest Number");
         exercise2.largestNumber();
 
-        System.out.println("\nTask 2: Stairs");
+        System.out.println("Task 2: Stairs");
         exercise2.stairs();
 
-        System.out.println("\nTask 3: Pyramide");
+        System.out.println("Task 3: Pyramide");
         exercise2.printPyramid();
-        */
-        /*
-        System.out.println("\nTask 4: Raute");
+
+        System.out.println("Task 4: Raute");
         exercise2.printRhombus();
-        */
-        System.out.println("\nTask 5: Notendurchschnitt");
+
+        System.out.println("Task 5: Notendurchschnitt");
         exercise2.marks();
-        /*
-        System.out.println("\nTask 6: Fröhliche Zahlen");
+
+        System.out.println("Task 6: Fröhliche Zahlen");
         exercise2.happyNumbers();
-        */
     }
-}
+    }
+

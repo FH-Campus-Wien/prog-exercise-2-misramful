@@ -83,7 +83,7 @@ public class App {
     //todo Task 4
 
     public void printRhombus(){
-        Scanner scan = new Scanner(System.in);
+        /*Scanner scan = new Scanner(System.in);
 
         System.out.print("h: ");
         int h = scan.nextInt();
@@ -121,7 +121,6 @@ public class App {
 haben ungerade zahl gegeben,
 
 //dann for schleife, fangen mit der nullten Zahl an, aufwärts zählen und dann rückwärts
-//Tutorium
 //Scanner scan...
 //Achtung obere und untere Hälfte
 

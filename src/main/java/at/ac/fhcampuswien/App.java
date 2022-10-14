@@ -185,7 +185,7 @@ Tutorium
 
     public static void main(String[] args){
         App exercise2 = new App();
-        /*
+
         System.out.println("Task 1: Largest Number");
         exercise2.largestNumber();
 

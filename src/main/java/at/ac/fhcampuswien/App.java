@@ -82,7 +82,7 @@ public class App {
 
     //todo Task 4
 
-    public void printRhombus(){
+    public void printRhombus(){ //T.besprechung
         Scanner scan = new Scanner(System.in);
 
         System.out.print("h: ");
@@ -168,27 +168,73 @@ if(countOfMarks==2){
     //todo Task 6; power ist hochzeile
     public void happyNumbers() {
 
-   /*     Scanner scan = new Scanner(System.in);
-        System.out.println("n: ");
+        System.out.print("n: ");
+
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        int sum = 0;
+
+        while (number > 0) {
+            if (number != 1 && number != 4) {
+                int hundreds = (number / 100);
+                int ten = (number / 10) % 10;
+                int one = number % 10;
+
+                sum = (one * one + ten * ten + hundreds * hundreds);
+                number = sum;
+            }
+            if (number == 4) {
+                System.out.println("Sad number!");
+                break; //kann verwendet werden um aus Schleife zu springenn
+            }
+            else if (number == 1) {
+                System.out.println("Happy number!");
+                break;
+            }
+        }
+
+        /*
+        // unhappy zahlen: lange if Bedingung mit oder
+        System.out.print("n: ");
+        int number = scan.nextInt();
+        int digit;
+        int sum = 0;
+        while(number !=1 && number !=4){
+            while(number>0){
+                digit = number % 10;
+                sum = (digit*digit) + sum;
+                number = number / 10;
+            }
+            number = sum;
+            sum =0;
+        }
+        if (number == 1) {
+            System.out.println("Happy number!");
+        }else {
+            System.out.println("Sad number!");
+        }
+
+
+
+
 
         int number = scan.nextInt();
         int x = 0;
 
-      / do {
-            x = (number % 10 * number % 10); //z.B. (30/10 = 0) * (30 oder 0/10 =  ); 31/10 = 1
-            number = number / 10;
-            while (number != 0);
-        }
+      do {
+          x = (number % 10 * number % 10); //z.B. (30/10 = 0) * (30 oder 0/10 =  ); 31/10 = 1
+          number = number / 10;
+          while (number != 0) ;
+      }
 
 
-
-        if x = 1 {
+        if (x = 1) {
             System.out.println("Happy number!");
         }
         else {
             System.out.println("Sad number!");
-        }
-*/
+        }*/
+
     }
 
 
